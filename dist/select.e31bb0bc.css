@@ -17,11 +17,15 @@ body {
   width: 100%;
   position: relative;
   cursor: pointer;
+  z-index: 100;
 }
 .select.open .select__input {
   border-bottom: none;
 }
 .select.open .select__dropdown {
+  display: block;
+}
+.select.open .select__backdrop {
   display: block;
 }
 .select__input {
@@ -32,6 +36,16 @@ body {
   align-items: center;
   padding: 0 1rem;
   justify-content: space-between;
+}
+.select__backdrop {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
 }
 .select__dropdown {
   display: none;
@@ -53,6 +67,9 @@ body {
 .select__item {
   padding: 1rem;
   border-bottom: 1px solid #ccc;
+}
+.select__item.selected {
+  background-color: bisque;
 }
 .select__item:hover {
   background-color: #ccc;
